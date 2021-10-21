@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test01", "Test01\Test01.csproj", "{B4BACB7E-03D4-4382-8FEB-666418186970}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlUsersElo2", "..\..\..\..\..\Tudásbázis\C#\MySqlUsersElo2\SqlUsersElo2.csproj", "{54BDB9EF-B8EE-44AD-9CDF-01F4FFF6CCA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B4BACB7E-03D4-4382-8FEB-666418186970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4BACB7E-03D4-4382-8FEB-666418186970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4BACB7E-03D4-4382-8FEB-666418186970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54BDB9EF-B8EE-44AD-9CDF-01F4FFF6CCA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BDB9EF-B8EE-44AD-9CDF-01F4FFF6CCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BDB9EF-B8EE-44AD-9CDF-01F4FFF6CCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BDB9EF-B8EE-44AD-9CDF-01F4FFF6CCA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
