@@ -28,5 +28,23 @@ namespace iktat
             Users frm = new Users();
             frm.ShowDialog();
         }
+
+        private void levélToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LetterOne frm = new LetterOne();
+            frm.ShowDialog();
+        }
+
+        private void levelekListaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lettersgrid frm = new Lettersgrid();
+            frm.ShowDialog();
+        }
+
+        private void iktatásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IktatForm frm = new IktatForm();
+            frm.ShowDialog();
+        }
     }
 }

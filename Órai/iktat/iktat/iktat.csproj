@@ -61,6 +61,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IktatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IktatForm.Designer.cs">
+      <DependentUpon>IktatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="letterDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>letterDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LetterOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LetterOne.Designer.cs">
+      <DependentUpon>LetterOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lettersgrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lettersgrid.Designer.cs">
+      <DependentUpon>Lettersgrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +114,15 @@
     <Compile Include="UserTetel.Designer.cs">
       <DependentUpon>UserTetel.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="IktatForm.resx">
+      <DependentUpon>IktatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LetterOne.resx">
+      <DependentUpon>LetterOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lettersgrid.resx">
+      <DependentUpon>Lettersgrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +141,17 @@
     <EmbeddedResource Include="UserTetel.resx">
       <DependentUpon>UserTetel.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="letterDS.xsc">
+      <DependentUpon>letterDS.xsd</DependentUpon>
+    </None>
+    <None Include="letterDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>letterDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="letterDS.xss">
+      <DependentUpon>letterDS.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
