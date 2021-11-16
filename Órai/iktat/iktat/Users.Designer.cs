@@ -31,10 +31,7 @@ namespace iktat
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users));
-            this.usersDS = new iktat.usersDS();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new iktat.usersDSTableAdapters.usersTableAdapter();
-            this.tableAdapterManager = new iktat.usersDSTableAdapters.TableAdapterManager();
             this.usersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -52,7 +49,6 @@ namespace iktat
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).BeginInit();
             this.usersBindingNavigator.SuspendLayout();
@@ -61,23 +57,16 @@ namespace iktat
             // 
             // usersDS
             // 
-            this.usersDS.DataSetName = "usersDS";
-            this.usersDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
+           // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.usersDS;
             // 
             // usersTableAdapter
             // 
-            this.usersTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = iktat.usersDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usersTableAdapter = this.usersTableAdapter;
             // 
             // usersBindingNavigator
             // 
@@ -254,7 +243,6 @@ namespace iktat
             this.Name = "Users";
             this.Text = "Felhasználók";
             this.Load += new System.EventHandler(this.Users_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.usersDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).EndInit();
             this.usersBindingNavigator.ResumeLayout(false);
@@ -267,10 +255,7 @@ namespace iktat
 
         #endregion
 
-        private usersDS usersDS;
         private System.Windows.Forms.BindingSource usersBindingSource;
-        private usersDSTableAdapters.usersTableAdapter usersTableAdapter;
-        private usersDSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator usersBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;

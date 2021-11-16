@@ -17,26 +17,26 @@ namespace iktat
             InitializeComponent();
         }
 
-        private void usersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void UserTetel_Load(object sender, EventArgs e)
         {
-            this.Validate();
-            try
-            {
-                this.usersBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.userDS);
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Hibás művelet \n" + err.Message);
-                this.usersTableAdapter.Fill(this.userDS.users);
-            }
+            // TODO: This line of code loads data into the 'felhasznDS.users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.felhasznDS.users);
+            // TODO: This line of code loads data into the 'felhasznDS.users' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'userDS.users' table. You can move, or remove it, as needed.
 
         }
 
-        private void UserTetel_Load(object sender, EventArgs e)
+        private void usersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'userDS.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.userDS.users);
+            this.Validate();
+
+        }
+
+        private void usersBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.usersBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.felhasznDS);
 
         }
     }

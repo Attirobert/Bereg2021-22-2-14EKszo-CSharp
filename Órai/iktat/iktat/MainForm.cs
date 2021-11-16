@@ -31,8 +31,6 @@ namespace iktat
 
         private void levélToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LetterOne frm = new LetterOne();
-            frm.ShowDialog();
         }
 
         private void levelekListaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +43,11 @@ namespace iktat
         {
             IktatForm frm = new IktatForm();
             frm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

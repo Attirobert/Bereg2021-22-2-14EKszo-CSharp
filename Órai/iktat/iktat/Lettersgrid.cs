@@ -20,17 +20,11 @@ namespace iktat
         private void lettersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.lettersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.letterDS);
 
         }
 
         private void Lettersgrid_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'letterDS.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.letterDS.users);
-            // TODO: This line of code loads data into the 'letterDS.letters' table. You can move, or remove it, as needed.
-            this.lettersTableAdapter.Fill(this.letterDS.letters);
 
         }
     }

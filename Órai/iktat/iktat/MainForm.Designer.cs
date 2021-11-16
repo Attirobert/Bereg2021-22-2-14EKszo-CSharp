@@ -63,14 +63,14 @@ namespace iktat
             // egyFelhasználóToolStripMenuItem
             // 
             this.egyFelhasználóToolStripMenuItem.Name = "egyFelhasználóToolStripMenuItem";
-            this.egyFelhasználóToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.egyFelhasználóToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.egyFelhasználóToolStripMenuItem.Text = "Egy felhasználó";
             this.egyFelhasználóToolStripMenuItem.Click += new System.EventHandler(this.egyFelhasználóToolStripMenuItem_Click);
             // 
             // felhasználókTáblaToolStripMenuItem
             // 
             this.felhasználókTáblaToolStripMenuItem.Name = "felhasználókTáblaToolStripMenuItem";
-            this.felhasználókTáblaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.felhasználókTáblaToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.felhasználókTáblaToolStripMenuItem.Text = "Felhasználók tábla";
             this.felhasználókTáblaToolStripMenuItem.Click += new System.EventHandler(this.felhasználókTáblaToolStripMenuItem_Click);
             // 
@@ -114,6 +114,7 @@ namespace iktat
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Iktatás";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

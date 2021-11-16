@@ -33,10 +33,10 @@ namespace iktat
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserTetel));
             System.Windows.Forms.Label id_userLabel;
             System.Windows.Forms.Label nevLabel;
-            this.userDS = new iktat.userDS();
+            this.felhasznDS = new iktat.felhasznDS();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new iktat.userDSTableAdapters.usersTableAdapter();
-            this.tableAdapterManager = new iktat.userDSTableAdapters.TableAdapterManager();
+            this.usersTableAdapter = new iktat.felhasznDSTableAdapters.usersTableAdapter();
+            this.tableAdapterManager = new iktat.felhasznDSTableAdapters.TableAdapterManager();
             this.usersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -55,21 +55,21 @@ namespace iktat
             this.adminCheckBox = new System.Windows.Forms.CheckBox();
             id_userLabel = new System.Windows.Forms.Label();
             nevLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.userDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.felhasznDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).BeginInit();
             this.usersBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // userDS
+            // felhasznDS
             // 
-            this.userDS.DataSetName = "userDS";
-            this.userDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.felhasznDS.DataSetName = "felhasznDS";
+            this.felhasznDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.userDS;
+            this.usersBindingSource.DataSource = this.felhasznDS;
             // 
             // usersTableAdapter
             // 
@@ -78,7 +78,7 @@ namespace iktat
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = iktat.userDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = iktat.felhasznDSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usersTableAdapter = this.usersTableAdapter;
             // 
             // usersBindingNavigator
@@ -203,12 +203,12 @@ namespace iktat
             this.usersBindingNavigatorSaveItem.Name = "usersBindingNavigatorSaveItem";
             this.usersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
             this.usersBindingNavigatorSaveItem.Text = "Save Data";
-            this.usersBindingNavigatorSaveItem.Click += new System.EventHandler(this.usersBindingNavigatorSaveItem_Click);
+            this.usersBindingNavigatorSaveItem.Click += new System.EventHandler(this.usersBindingNavigatorSaveItem_Click_1);
             // 
             // id_userLabel
             // 
             id_userLabel.AutoSize = true;
-            id_userLabel.Location = new System.Drawing.Point(47, 48);
+            id_userLabel.Location = new System.Drawing.Point(72, 46);
             id_userLabel.Name = "id_userLabel";
             id_userLabel.Size = new System.Drawing.Size(42, 13);
             id_userLabel.TabIndex = 1;
@@ -217,7 +217,7 @@ namespace iktat
             // id_userLabel1
             // 
             this.id_userLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Id_user", true));
-            this.id_userLabel1.Location = new System.Drawing.Point(95, 48);
+            this.id_userLabel1.Location = new System.Drawing.Point(120, 46);
             this.id_userLabel1.Name = "id_userLabel1";
             this.id_userLabel1.Size = new System.Drawing.Size(104, 23);
             this.id_userLabel1.TabIndex = 2;
@@ -226,16 +226,16 @@ namespace iktat
             // nevLabel
             // 
             nevLabel.AutoSize = true;
-            nevLabel.Location = new System.Drawing.Point(47, 77);
+            nevLabel.Location = new System.Drawing.Point(72, 75);
             nevLabel.Name = "nevLabel";
-            nevLabel.Size = new System.Drawing.Size(30, 13);
+            nevLabel.Size = new System.Drawing.Size(28, 13);
             nevLabel.TabIndex = 3;
-            nevLabel.Text = "Név:";
+            nevLabel.Text = "nev:";
             // 
             // nevTextBox
             // 
             this.nevTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "nev", true));
-            this.nevTextBox.Location = new System.Drawing.Point(95, 74);
+            this.nevTextBox.Location = new System.Drawing.Point(120, 72);
             this.nevTextBox.Name = "nevTextBox";
             this.nevTextBox.Size = new System.Drawing.Size(104, 20);
             this.nevTextBox.TabIndex = 4;
@@ -243,7 +243,7 @@ namespace iktat
             // adminCheckBox
             // 
             this.adminCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.usersBindingSource, "admin", true));
-            this.adminCheckBox.Location = new System.Drawing.Point(95, 100);
+            this.adminCheckBox.Location = new System.Drawing.Point(120, 98);
             this.adminCheckBox.Name = "adminCheckBox";
             this.adminCheckBox.Size = new System.Drawing.Size(104, 24);
             this.adminCheckBox.TabIndex = 6;
@@ -264,7 +264,7 @@ namespace iktat
             this.Name = "UserTetel";
             this.Text = "Felhasználó";
             this.Load += new System.EventHandler(this.UserTetel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.userDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.felhasznDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).EndInit();
             this.usersBindingNavigator.ResumeLayout(false);
@@ -276,10 +276,10 @@ namespace iktat
 
         #endregion
 
-        private userDS userDS;
+        private felhasznDS felhasznDS;
         private System.Windows.Forms.BindingSource usersBindingSource;
-        private userDSTableAdapters.usersTableAdapter usersTableAdapter;
-        private userDSTableAdapters.TableAdapterManager tableAdapterManager;
+        private felhasznDSTableAdapters.usersTableAdapter usersTableAdapter;
+        private felhasznDSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator usersBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
