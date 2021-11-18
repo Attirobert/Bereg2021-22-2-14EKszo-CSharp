@@ -14,8 +14,10 @@ namespace iktat
     public partial class IktatForm : Form
     {
         // Osztályváltozók
-        private SqlConnection sqlConn;
-        private string letterInsert = "letterInsert";
+        private SqlConnection sqlConn;  // Connection string változója
+        // Tárolt eljárások nevei
+        private readonly string letterInsert = "letterInsert";
+        private readonly string usersToCbx = "usersToCbx";   // Címzett combobox feltöltéséhez
 
         public IktatForm()
         {
@@ -26,19 +28,53 @@ namespace iktat
         {
             // Kapcsolódás az adatbázishoz
             sqlConnect();
+
+            // Címzett combobox feltöltése
+            UserCbxFill();
+        }
+
+        private void UserCbxFill()
+        {
+            using (SqlCommand sqlComm = new SqlCommand(usersToCbx, sqlConn))
+            {
+                sqlComm.CommandType = CommandType.StoredProcedure;
+                try
+                {
+                    // DataTable feltöltése az adatbázisból
+                    SqlDataAdapter sqlDa = new SqlDataAdapter(sqlComm);
+                    DataTable dtbl = new DataTable();
+                    sqlDa.Fill(dtbl);
+
+                    // Az első sor közvetlen bevitele
+                    DataRow rowItem = dtbl.NewRow();
+                    rowItem[0] = 0;
+                    rowItem[1] = "- Válasszon -";
+                    dtbl.Rows.InsertAt(rowItem, 0);
+
+                    // A combobox komponens bekötése a DataTable-höz
+                    cbxCimzett.ValueMember = "Id_user";
+                    cbxCimzett.DisplayMember = "nev";
+                    cbxCimzett.DataSource = dtbl;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
         }
 
         private void sqlConnect()
         {
             SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
             sb.DataSource = "(localdb)\\MSSQLLocalDB";
-            sb.InitialCatalog = "iktat";
+            sb.InitialCatalog = "iktato";
 
             try
             {
                 sqlConn = new SqlConnection(sb.ToString());
                 sqlConn.Open();
-                MessageBox.Show("A kapcsolódás az adatbázishoz sikeres!");
+                // MessageBox.Show("A kapcsolódás az adatbázishoz sikeres!");
             }
             catch (Exception ex)
             {
@@ -67,7 +103,7 @@ namespace iktat
                 sqlComm.Parameters.AddWithValue("erkezett", dtpErkezett.Value);
                 sqlComm.Parameters.AddWithValue("targy", tbxTargy.Text);
                 sqlComm.Parameters.AddWithValue("leiras", rtbLeiras.Text);
-                sqlComm.Parameters.AddWithValue("user", cbxCimzett.SelectedValue);
+                sqlComm.Parameters.AddWithValue("Id_user", Convert.ToInt32(cbxCimzett.SelectedValue));
 
                 try
                 {
@@ -94,7 +130,7 @@ namespace iktat
 
         private void IktatForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-           // sqlConn.Close();
+           sqlConn.Close();
         }
     }
 }

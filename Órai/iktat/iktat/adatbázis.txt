@@ -1,0 +1,59 @@
+﻿CREATE TABLE [dbo].[users] (
+    [Id_user] INT        IDENTITY (1, 1) NOT NULL,
+    [nev]     NCHAR (25) NOT NULL,
+    [admin]   TINYINT    DEFAULT ((0)) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id_user] ASC)
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_users_nev]
+    ON [dbo].[users]([nev] ASC);
+
+
+
+CREATE TABLE [dbo].[letters] (
+    [Id_letter] INT        IDENTITY (1, 1) NOT NULL,
+    [erkezett]  DATE       NOT NULL,
+    [targy]     NCHAR (50) NOT NULL,
+    [leiras]    TEXT       NOT NULL,
+    [Id_user]   INT        NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id_letter] ASC),
+    CONSTRAINT [FK_letters_user] FOREIGN KEY ([Id_user]) REFERENCES [dbo].[users] ([Id_user])
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_letters_erkezett]
+    ON [dbo].[letters]([erkezett] DESC);
+
+# Adatok
+SET IDENTITY_INSERT [dbo].[users] ON
+INSERT INTO [dbo].[users] ([Id_user], [nev], [admin]) VALUES (1, N'Gergő                    ', 0)
+INSERT INTO [dbo].[users] ([Id_user], [nev], [admin]) VALUES (2, N'Alex                     ', 0)
+INSERT INTO [dbo].[users] ([Id_user], [nev], [admin]) VALUES (3, N'Abigél                   ', 1)
+INSERT INTO [dbo].[users] ([Id_user], [nev], [admin]) VALUES (4, N'Sanyi                    ', 0)
+SET IDENTITY_INSERT [dbo].[users] OFF
+
+
+SET IDENTITY_INSERT [dbo].[letters] ON
+INSERT INTO [dbo].[letters] ([Id_letter], [erkezett], [targy], [leiras], [Id_user]) VALUES (2, N'2021-11-09', N'Emlékeztető                                       ', N'A tegnapi megbeszélésrol', 1)
+INSERT INTO [dbo].[letters] ([Id_letter], [erkezett], [targy], [leiras], [Id_user]) VALUES (3, N'2021-11-09', N'Feljegyzés                                        ', N'A holnapi találkozóra', 4)
+INSERT INTO [dbo].[letters] ([Id_letter], [erkezett], [targy], [leiras], [Id_user]) VALUES (1002, N'2021-11-18', N'Akármi                                            ', N'earbvr6z zutrinrtzu', 2)
+SET IDENTITY_INSERT [dbo].[letters] OFF
+
+# Tárolt eljárások
+CREATE PROCEDURE [dbo].usersToCbx
+AS
+	SELECT Id_user, nev FROM users
+RETURN 0
+
+CREATE PROCEDURE [dbo].letterInsert
+	@erkezett date,
+	@targy nchar(50), 
+	@leiras text, 
+	@Id_user int
+
+AS
+	INSERT INTO letters (erkezett, targy, leiras, Id_user) VALUES (@erkezett, @targy, @leiras, @Id_user)
+RETURN 0
