@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iktat", "iktat\iktat\iktat.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelhasznaloiFelulet", "..\..\..\..\..\Tudásbázis\C#\FelhasznaloiFelulet\FelhasznaloiFelulet.csproj", "{68404171-71F8-4A5A-9804-FBA95F7E28F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoNyilvantarto", "..\..\..\..\..\Tudásbázis\C#\AutoNyilvantarto\AutoNyilvantarto\AutoNyilvantarto.csproj", "{E86EED11-208B-4885-AEC1-AD70AF018DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File", "..\..\..\..\..\Tudásbázis\C#\File\File.csproj", "{9C86771F-B9BC-4530-B5CF-38640EEB8207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tagdij", "..\..\..\..\..\Tudásbázis\C#\Tagdij\Tagdij\Tagdij.csproj", "{10A76675-EB1C-412C-A86E-FFEBD65403AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{68404171-71F8-4A5A-9804-FBA95F7E28F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68404171-71F8-4A5A-9804-FBA95F7E28F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68404171-71F8-4A5A-9804-FBA95F7E28F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E86EED11-208B-4885-AEC1-AD70AF018DED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E86EED11-208B-4885-AEC1-AD70AF018DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E86EED11-208B-4885-AEC1-AD70AF018DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E86EED11-208B-4885-AEC1-AD70AF018DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C86771F-B9BC-4530-B5CF-38640EEB8207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C86771F-B9BC-4530-B5CF-38640EEB8207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C86771F-B9BC-4530-B5CF-38640EEB8207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C86771F-B9BC-4530-B5CF-38640EEB8207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A76675-EB1C-412C-A86E-FFEBD65403AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A76675-EB1C-412C-A86E-FFEBD65403AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A76675-EB1C-412C-A86E-FFEBD65403AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A76675-EB1C-412C-A86E-FFEBD65403AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
