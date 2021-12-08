@@ -1,0 +1,23 @@
+﻿<Window x:Class="Haz.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Haz"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas x:Name="cvLap">
+        <!-- Fa törzsének a definiálása -->
+        <Rectangle x:Name="rxTorzs" Width="20" Height="40" Fill="Brown"
+                   Stroke="Brown" StrokeThickness="2"
+                   Canvas.Left="35" Canvas.Top="75"
+                   />
+
+        <!-- Fa lombjának a definiálása -->
+        <Ellipse x:Name="elLomb" Width="40" Height="50" Fill="LightGreen"
+                 Stroke="Green" StrokeThickness="2"
+                 Canvas.Left="25" Canvas.Top="30"
+                 />
+
+    </Canvas>
+</Window>
